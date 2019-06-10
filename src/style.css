@@ -1,4 +1,6 @@
-
+html{
+	direction: rtl;
+}
 table{
 	width: 100%;
 	border-collapse: collapse;
