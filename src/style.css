@@ -1,7 +1,11 @@
-html{
+html, body{
 	direction: rtl;
+	width: 100%;
+	height: 100%;
+	background-color: #eee;
+
 }
-table{
+/* table{
 	width: 100%;
 	border-collapse: collapse;
 }
@@ -35,7 +39,7 @@ tr:nth-of-type(2n) {
 	cursor: pointer;
 	margin: auto;
 }
-
+ */
 
 
 .login{
@@ -54,55 +58,102 @@ tr:nth-of-type(2n) {
 .display{
 	display: block;
 }
-.sec-list{
+/* .sec-list{
 	background-color: yellow;
-}
+	height: 100%;
+} */
 .vertical{
 	display: flex;
 	flex-direction: column;
-	background-color: pink;
-	position: absolute;
+	/* background-color: pink; */
+	/* position: absolute; */
 	top: 0;
 	right: 0;
 	bottom: 0;
 	width: 300px;
-}
-.logo{
-	background-image: url('../asets/logo-map.png');
+	background-image: url('../asets/index.png');
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 80%;
+	background-size:cover;
+	height: 100%;
+
+
+}
+.overlay{
+	background: linear-gradient(#ff5722,#e91e63);
+	opacity: 0.8;
+	z-index: 10;
+	width: 300px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
+.overlay2{
+	background: black;
+	opacity: 0.5;
+	z-index: 10;
+	width: 300px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+}
+.logo{
+	background-image: url('../asets/logo.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 40%;
 	width: 100%;
 	height: 100px;
 	padding: 10px;
-	/* display: flex;
-	flex-direction: column; */
+	display: flex;
+	flex-direction: column;
 	position: relative;
+	z-index: 20;
 
 }
 .logo::after{
 	content: '';
 	position: absolute;
-	/* right: 15px; */
+	right: 15px;
 	height: 1px;
-	width: calc(100% - 30px);
+	width: calc(100% - 50px);
 	background-color: rgba(180,180,180,0.3);
 	bottom: 0;
 	left: 15px;
-}
-/* .logo::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 15px;
-    height: 1px;
-    width: calc(100% - 30px);
-    background-color: rgba(180, 180, 180, 0.3);
-} */
+	}
+
 .list{
-	flex-grow: 10;
+	flex-grow: 100;
+	z-index: 200;
 
 }
 .list-item{
 
+}
+.list-item li{
+	color: white;
+	padding: 15px 30px;
+	margin: 10px;
+	border: 0px;
+	border-radius:8px;
+
+}
+.list-item li:hover{
+	color: grey;
+	background-color: #e91e63;
+	cursor: pointer;
+}
+.dashboard::before{
+	content: '';
+	width: 30px;
+	height: 30px;
+	position:absolute ;
+	background-image: url('../asets/layout.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 80%;
+	display: block;
+	z-index: 200;
+	right: 0;
+	padding: 0 10px;
 }
