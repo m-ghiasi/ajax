@@ -12,43 +12,27 @@ html, body{
     font-size: 15px;
 
 }
-
-/* table{
-	width: 100%;
-	border-collapse: collapse;
-}
-thead tr{
-	color: white;
-	background-color: rgb(255, 179, 179) !important;
-}
-th,td{
-	padding: 5px;
-	text-align: center;
-	height: 30px;
+body{
+    display: flex;
+    flex-direction: row;
 
 }
 
-tr:nth-of-type(2n+1) {
-	background-color: rgb(255, 179, 179);
-}
-
-tr:nth-of-type(2n) {
-	background-color: rgba(255, 179, 179,0.7)
-}
-.geom{
-	cursor: pointer;
-	background-image: url(../asets/placeholder.svg);
+.vertical{
+	display: flex;
+	flex-direction: column;
+	/* background-color: pink; */
+	/* position: absolute; */
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 300px;
+	background-image: url('../asets/index.png');
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 20%;
-
+	background-size:cover;
+	height: 100%;
 }
-.status{
-	cursor: pointer;
-	margin: auto;
-}
- */
-
 
 .login{
 	margin: auto;
@@ -70,23 +54,7 @@ tr:nth-of-type(2n) {
 	background-color: yellow;
 	height: 100%;
 } */
-.vertical{
-	display: flex;
-	flex-direction: column;
-	/* background-color: pink; */
-	/* position: absolute; */
-	top: 0;
-	right: 0;
-	bottom: 0;
-	width: 300px;
-	background-image: url('../asets/index.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size:cover;
-	height: 100%;
 
-
-}
 .overlay{
 	background: linear-gradient(#ff5722,#e91e63);
 	opacity: 0.8;
@@ -141,15 +109,20 @@ tr:nth-of-type(2n) {
 .list-item li{
 	color: white;
 	padding: 15px 50px;
-	margin:0px 10px;
+	margin:10px 15px;
 	border: 0px;
-	border-radius:8px;
+	border-radius:3px;
 
 }
-.list-item li:hover{
+.list-item li:hover:not(.select){
 	background-color:rgb(0,0,0,0.1);
 	cursor: pointer;
 
+
+}
+.list-item li a p:hover:not(.select){
+    color:rgb(0,0,0,0.7);
+    transition: .4s;
 }
 
 .list-item li a{
@@ -158,15 +131,74 @@ tr:nth-of-type(2n) {
     text-decoration: none;
     justify-content: flex-end;
     right: 0;
+
 }
 .list-item li a p{
     font-family: Iransans;
     font-size: 13px;
     padding: 5px 10px 0px;
     color: white;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 .list-item li a{
     color: gray;
+    width: 100%;
+    height:inherit;
 
 }
-.list-item li a p:hover
+.select{
+    background-color: #e91e63;
+}
+.white{
+    color: white;
+}
+.horizental{
+    display: flex;
+	flex-direction: column;
+	top: 0;
+	left: 0;
+	bottom: 0;
+    width: calc(100% - 300px);
+	height: 100%;
+    background-color: #eee;
+}
+.head p{
+    padding: 20px;
+}
+/* table{
+	width: 100%;
+	border-collapse: collapse;
+}
+thead tr{
+	color: white;
+	background-color: rgb(255, 179, 179) !important;
+}
+th,td{
+	padding: 5px;
+	text-align: center;
+	height: 30px;
+
+}
+
+tr:nth-of-type(2n+1) {
+	background-color: rgb(255, 179, 179);
+}
+
+tr:nth-of-type(2n) {
+	background-color: rgba(255, 179, 179,0.7)
+}
+.geom{
+	cursor: pointer;
+	background-image: url(../asets/placeholder.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 20%;
+
+}
+.status{
+	cursor: pointer;
+	margin: auto;
+}
+ */

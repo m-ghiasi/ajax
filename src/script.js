@@ -16,7 +16,7 @@ $(document).ready(function(){
 			}
 		}).done(function(data){
 			window.location.replace('index.html');
-			
+
 
 
 			tokenid = data.tokenId;
@@ -29,6 +29,18 @@ $(document).ready(function(){
 			alert( "error" );
 		})
 	})
+	$('.dashboard').addClass("select");
+	$(".dashboard a span").addClass("white");
+	$('.list-item li').on('click',function(){
+		$('.list-item li').removeClass("select");
+		$('.list-item li a span').removeClass("white");
+		$(this).addClass('select');
+		$(this).find('span').addClass('white');
+
+		// $(".dashboard a span").removeClass("white");
+	})
+
+
 
 
 
