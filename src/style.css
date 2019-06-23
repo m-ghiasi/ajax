@@ -221,12 +221,27 @@ th,td{
 .search{
     padding: 10px;
 }
+
+.display{
+	display: block;
+}
+.inp-search{
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #F5F5F5;
+    background-color: inherit;
+    color: #C0C0C0;
+    width: 400px;
+    /* padding: 15px; */
+    font-family: Iransans;
+    font-size: 15px;
+    margin: 5px;
+
+
+}
 #search{
     border: none;
     border-radius: 50%;
     padding: 10px;
     color: gray;
-}
-.display{
-	display: block;
 }
