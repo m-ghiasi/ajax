@@ -21,6 +21,10 @@ $(document).ready(function() {
             skip += 10
             getTicket();
         })
+        $('.prev-page').on('click', function() {
+            skip -= 10
+            getTicket();
+        })
 
     });
     function getTicket() {
