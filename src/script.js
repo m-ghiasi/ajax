@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+var skip='0';
     $('.dashboard').addClass("select");
     $(".dashboard a span").addClass("white");
     $('.list-item li').on('click', function() {
@@ -19,7 +19,12 @@ $(document).ready(function() {
             type: 'get',
             headers: {
                 "token": localStorage["token"]
+            },
+            data:{
+                $top:'10',
+                $skip:skip
             }
+
 
         }).done(function(data) {
 
