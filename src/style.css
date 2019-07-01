@@ -335,11 +335,11 @@ th,td{
     /* direction: ltr; */
     width: 20px;
     height: 20px;
-    display: none;
+    /* display: none; */
 }
 .prev-page{
     width: 20px;
     height: 20px;
-    display: none;
+    /* display: none; */
 
 }
