@@ -14,7 +14,15 @@ $(document).ready(function() {
 
         $(".co-table").addClass("display")
         getTicket();
-
+        $(document).ajaxStart(function(){
+            $("#wait").css("display", "block");
+          });
+          $(document).ajaxComplete(function(){
+            $("#wait").css("display", "none");
+          });
+          $("button").click(function(){
+            $("#txt").load("demo_ajax_load.asp");
+          });
 
 
         $('.next-page').on('click', function() {
