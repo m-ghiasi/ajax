@@ -259,15 +259,22 @@ th,td{
 
 .geom{
 	cursor: pointer;
-	background-image: url(../asets/placeholder.svg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 20%;
-
+    color: red;
 }
-.status{
+.restore:hover{
+    color: blue;
+}
+.lock_open:hover{
+    color: green;
+}
+.lock:hover{
+    color: red;
+}
+#status,#operation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 	cursor: pointer;
-	margin: auto;
 }
 
 .content{

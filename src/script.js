@@ -51,20 +51,22 @@ $(document).ready(function() {
             $.each(data, function(index, item) {
 
                 if (item.status === 'open') {
-                    statusicon = 'fas fa-lock-open';
+                    statusicon = 'lock_open';
                 } else if (item.status === 'close') {
-                    statusicon = 'fas fa-lock';
+                    statusicon = 'lock';
                 } else {
-                    statusicon = 'fas fa-spinner';
+                    statusicon = 'restore';
                 }
 
                 trs +=
                     `<tr>
                 <td>${skip + index + 1}</td>
+                <td class="geom" data-lat="${item.geom.coordinates[0]}" data-lon="${item.geom.coordinates[1]}"> <a class="material-icons">room</a> </td>
+                <td id="status"class="material-icons "><a class="${statusicon}">${statusicon}</a></td>
                 <td>${item.description}</td>
-                <td class="geom" data-lat="${item.geom.coordinates[0]}" data-lon="${item.geom.coordinates[1]}"></td>
-                <td class="status ${statusicon}"><div class="change-icon"><div class="icon"><div class="iconopen"></div><div <div class="iconopen">></div><div <div class="iconopen">></div></div></div></td>
+                <td id="operation"class="material-icons ">create</td>
                 </tr>`
+
             });
             // window.location.assign('index.html');
 
