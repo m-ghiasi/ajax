@@ -12,29 +12,26 @@ $(document).ready(function() {
 
     $(".local_offer").on('click', function() {
 
-        $(".co-table").addClass("display")
+        $(".co-table").addClass("display");
+
+        loading();
+
         getTicket();
-        $(document).ajaxStart(function(){
-            $("#wait").css("display", "block");
-          });
-          $(document).ajaxComplete(function(){
-            $("#wait").css("display", "none");
-          });
-          $("button").click(function(){
-            $("#txt").load("demo_ajax_load.asp");
-          });
 
 
         $('.next-page').on('click', function() {
             skip += 10
+            loading();
             getTicket();
         })
         $('.prev-page').on('click', function() {
             skip -= 10
             getTicket();
-        })
+        });
+
 
     });
+
     function getTicket() {
         $.ajax({
             url: 'https://dev.map.ir/tbt/tickets',
@@ -50,7 +47,7 @@ $(document).ready(function() {
 
         }).done(function(data) {
 
-            console.log(data);
+            // console.log(data);
             var statusicon = '';
 
 
@@ -76,14 +73,32 @@ $(document).ready(function() {
                 </tr>`
 
             });
-            // window.location.assign('index.html');
+
 
             $('table tbody').html(trs);
 
             $('.geom').on('click', function() {
                 window.open(`https://map.ir/lat/${$(this).attr('data-lat')}/lng/${$(this).attr('data-lon')}/z/17`);
             });
+        }).fail(function(error) {
+            if (error.status === 401)
+                // console.log(error);
+                window.location.assign('index-login.html');
+
         });
+    }
+
+    function loading() {
+        jQuery.ajaxSetup({
+            beforeSend: function() {
+                $('.loadig').show();
+            },
+            complete: function() {
+                $('.loadig').hide();
+            },
+
+        });
+
     }
 
 });
