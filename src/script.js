@@ -8,11 +8,13 @@ $(document).ready(function() {
         $('.co-table').removeClass("display");
         $(this).addClass('select');
         $(this).find('span').addClass('white');
+
     });
+
 
     $(".local_offer").on('click', function() {
 
-        $(".co-table").addClass("display");
+        $(".co-table").addClass('display');
 
         loading();
 
@@ -30,7 +32,9 @@ $(document).ready(function() {
         });
 
 
+
     });
+
 
     function getTicket() {
         $.ajax({
@@ -67,7 +71,7 @@ $(document).ready(function() {
                     `<tr>
                 <td>${skip + index + 1}</td>
                 <td class="geom" data-lat="${item.geom.coordinates[0]}" data-lon="${item.geom.coordinates[1]}"> <a class="material-icons">room</a> </td>
-                <td id="status"class="material-icons "><a class="${statusicon}">${statusicon}</a></td>
+                <td id="status"class="material-icons "><a class="${statusicon}">${statusicon}<div class="change-status"><div class="status-wrper"><a class="restore">restore</a><a class="lock_open">lock_open</a><a class="lock">lock</a></div></div></a></td>
                 <td>${item.description}</td>
                 <td id="operation"class="material-icons ">create</td>
                 </tr>`
@@ -75,7 +79,16 @@ $(document).ready(function() {
             });
 
 
+
             $('table tbody').html(trs);
+
+            $('#status').on('click', function() {
+                console.log("jihi");
+                $('.change-status').addClass('display')
+            });
+            $('.status-wrper a').on('click', function(){
+                console.log(a);
+            });
 
             $('.geom').on('click', function() {
                 window.open(`https://map.ir/lat/${$(this).attr('data-lat')}/lng/${$(this).attr('data-lon')}/z/17`);
