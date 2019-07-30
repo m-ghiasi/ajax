@@ -71,7 +71,7 @@ $(document).ready(function() {
                     `<tr>
                 <td>${skip + index + 1}</td>
                 <td class="geom" data-lat="${item.geom.coordinates[0]}" data-lon="${item.geom.coordinates[1]}"> <a class="material-icons">room</a> </td>
-                <td id="status"class="material-icons "><a class="${statusicon}">${statusicon}</a><div class="change-status"><div class="status-wrper"><a class="restore">restore</a><a class="lock_open">lock_open</a><a class="lock">lock</a></div></div></td>
+                <td id"status" class="wraper-status material-icons "><a class="${statusicon}">${statusicon}</a><div class="grupeicon"><div class="change-status"><a class="restore">restore</a><a class="lock_open">lock_open</a><a class="lock">lock</a></div></div></div></td>
                 <td>${item.description}</td>
                 <td id="operation"class="material-icons ">create</td>
                 </tr>`
@@ -82,18 +82,19 @@ $(document).ready(function() {
 
             $('table tbody').html(trs);
 
-            $('#status').on('click', function() {
-                $('.change-status').addClass('display')
+            $('.wraper-status').on('click', function() {
+                $(this).find('.grupeicon').addClass('display')
             });
 
-            $('.status-wrper a').on('click', function(){
-                $('#status').removeClass('display');
-                $(this).attr('class');
-                $('#status a').removeClass();
-                $('#status a').addClass($(this).attr('class'))
+            $('.change-status a').on('click', function(){
+                console.table("jkk");
+                $('.grupeicon').removeClass('display');
+                // $(this).attr('class');
+                // $('#status a').removeClass();
+                //
+                //
 
-
-                console.log($(this).attr('class'));
+                // console.log($(this).attr('class'));
             });
 
             $('.geom').on('click', function() {
